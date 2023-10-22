@@ -230,6 +230,20 @@ def inserir_cardapio(nome_do_restaurante, nome_cardapio):
                         
             atualizar_dados_cardapio(nome_do_restaurante, nome_cardapio)
 
+# Função para excluir restaurante.
+def excluir_restaurante(nome_do_restaurante):
+     
+    posicao_restaurante = busca_posicao_restaurante(nome_do_restaurante)
+
+    if posicao_restaurante == None:
+
+        print(f"Restaurante {nome_do_restaurante} não encontrado.")
+
+    else:
+        
+        lista_restaurante_caradapio.pop(posicao_restaurante)
+        
+        print(f"Restaurante {nome_do_restaurante} excluído")
 def main():
   while True:
     opcao = menu()
