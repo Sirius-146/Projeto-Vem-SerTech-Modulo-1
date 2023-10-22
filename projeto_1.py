@@ -189,6 +189,7 @@ def busca_posicao_cardapio(nome_restaurante, nome_cardapio):
         
         j += 1
 
+# Função p/ inserir restaurante sem duplicata.
 def inserir_restaurante(nome_do_restaurante):
     
     posicao_restaurante = busca_posicao_restaurante(nome_do_restaurante)
@@ -203,6 +204,31 @@ def inserir_restaurante(nome_do_restaurante):
         
         print(f"Restaurante {nome_do_restaurante} já está cadastrado")
 
+# Função p/ inserir cardápio sem duplicata.
+def inserir_cardapio(nome_do_restaurante, nome_cardapio):
+
+    posicao_restaurante = busca_posicao_restaurante(nome_do_restaurante)
+    
+    
+    if (posicao_restaurante == None):
+        
+        print(f"Cadastrar restaurante {nome_do_restaurante}.")
+
+    else:
+        
+        posicao_cardapio = busca_posicao_cardapio(nome_do_restaurante, nome_cardapio)
+
+        if (posicao_cardapio == None):
+                
+                lista_restaurante_caradapio[posicao_restaurante].append(nome_cardapio)
+
+                print(f"Cardápio {nome_cardapio} adicionado no restaurante {nome_do_restaurante}.")
+
+                # Função Myrna, verificar
+        
+        else:
+                        
+            atualizar_dados_cardapio(nome_do_restaurante, nome_cardapio)
 
 def main():
   while True:
