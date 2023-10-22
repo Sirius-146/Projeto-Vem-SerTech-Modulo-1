@@ -189,6 +189,20 @@ def busca_posicao_cardapio(nome_restaurante, nome_cardapio):
         
         j += 1
 
+def inserir_restaurante(nome_do_restaurante):
+    
+    posicao_restaurante = busca_posicao_restaurante(nome_do_restaurante)
+
+    if posicao_restaurante == None:
+        
+        lista_restaurante_caradapio.append([nome_do_restaurante])
+
+        print(f"Restaurante {nome_do_restaurante} cadastrado")
+
+    else:
+        
+        print(f"Restaurante {nome_do_restaurante} já está cadastrado")
+
 
 def main():
   while True:
