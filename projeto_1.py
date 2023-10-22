@@ -244,6 +244,31 @@ def excluir_restaurante(nome_do_restaurante):
         lista_restaurante_caradapio.pop(posicao_restaurante)
         
         print(f"Restaurante {nome_do_restaurante} excluído")
+
+# Função para excluir cardápio.
+def excluir_cardapio(nome_do_restaurante, nome_cardapio):
+    
+    posicao_restaurante = busca_posicao_restaurante(nome_do_restaurante)
+
+    if (posicao_restaurante == None):
+        
+        print(f"Restaurante {nome_do_restaurante} não encontrado.")
+
+    else:
+
+        posicao_cardapio = busca_posicao_cardapio(nome_do_restaurante, nome_cardapio)
+
+        if (posicao_cardapio == None):
+
+            print(f"Cardápio {nome_cardapio} do Restaurante {nome_do_restaurante} não encontrado.")
+
+        else:
+
+            lista_restaurante_caradapio[posicao_restaurante].pop(posicao_cardapio)
+        
+            print(f"Cardápio {nome_cardapio} do Restaurante {nome_do_restaurante} excluído.")
+
+
 def main():
   while True:
     opcao = menu()
