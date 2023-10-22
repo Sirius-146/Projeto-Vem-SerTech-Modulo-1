@@ -127,6 +127,29 @@ def visualizar_restaurantes():
 
     for restaurante in restaurantes:
         exibe_cardapio(restaurante)
+
+# Busca o índice do restaurante na lista.
+def busca_posicao_restaurante(nome_restaurante):
+    
+    i = 0
+
+    buscar_posicao_restaurante = True
+    
+    while buscar_posicao_restaurante:
+        
+        if lista_restaurante_caradapio[i][0] == nome_restaurante:
+                
+            buscar_posicao_restaurante = False
+
+            return i
+        
+        elif i == (len(lista_restaurante_caradapio)-1):
+            
+            buscar_posicao_restaurante == False
+            
+            return None
+        
+        i += 1
             
 def main():
   while True:
