@@ -268,7 +268,11 @@ def excluir_cardapio(nome_do_restaurante, nome_cardapio):
         
             print(f"Cardápio {nome_cardapio} do Restaurante {nome_do_restaurante} excluído.")
 
+# Sugestão para desenvolvimento, uma função que atualiza dados já armazenados.
+def atualizar_dados_cardapio(nome_do_restaurante, nome_cardapio):
+    print(f"Cardápio {nome_cardapio} do restaurante {nome_do_restaurante} está atualizado.")
 
+    
 def main():
   while True:
     opcao = menu()
