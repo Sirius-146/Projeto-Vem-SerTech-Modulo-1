@@ -150,7 +150,46 @@ def busca_posicao_restaurante(nome_restaurante):
             return None
         
         i += 1
+
+# Busca o índice do cardápio na lista do restaurante que pertence a lista geral.
+def busca_posicao_cardapio(nome_restaurante, nome_cardapio):
+    
+    i = 0
+
+    buscar_posicao_restaurante = True
+    
+    while buscar_posicao_restaurante:
+        
+        if lista_restaurante_caradapio[i][0] == nome_restaurante:
+                
+            buscar_posicao_restaurante = False
             
+            posicao_restaurante = i
+
+        
+        i += 1
+    
+    j = 0
+
+    buscar_posicao_cardapio = True
+    
+    while buscar_posicao_cardapio:
+        
+        if  lista_restaurante_caradapio[posicao_restaurante][j] == nome_cardapio:
+            
+            buscar_posicao_cardapio = False
+
+            return j
+        
+        elif j == (len(lista_restaurante_caradapio[posicao_restaurante])-1):
+            
+            buscar_posicao_cardapio == False
+            
+            return None
+        
+        j += 1
+
+
 def main():
   while True:
     opcao = menu()
